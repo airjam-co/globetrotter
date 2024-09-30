@@ -1,0 +1,34 @@
+{
+  "name": "@airjam/globetrotter",
+  "version": "1.0.0",
+  "description": "Globetrotter is next-gen i18n library that lets projects support 40+ languages with a single line of code",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airjam-co/globetrotter-cli.git"
+  },
+  "keywords": [
+    "LLM",
+    "i18n",
+    "internationalization",
+    "localization",
+    "translation",
+    "node"
+  ],
+  "author": "AirJam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/airjam-co/globetrotter-cli/issues"
+  },
+  "homepage": "https://github.com/airjam-co/globetrotter-cli#readme",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "ora": "^8.1.0",
+    "undici": "^6.19.8"
+  }
+}
