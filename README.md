@@ -1,0 +1,2 @@
+# globetrotter
+Globetrotter CLI tool
