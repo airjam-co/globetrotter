@@ -1,11 +1,11 @@
 import fs from 'fs';
 import ora from 'ora';
-import { fetch, setGlobalDispatcher, Agent } from 'undici'
+import { fetch, setGlobalDispatcher, Agent } from 'undici';
 
 const DEFAULT_EXTENSION = '.json';
 const DEFAULT_LOCALE = 'en-US';
 const DEFAULT_ENCODING = 'utf8';
-const TRANSLATOR_ENDPOINT = 'http://airjam.co/s/translate';
+const TRANSLATOR_ENDPOINT = 'https://airjam.co/s/translate';
 
 export function backfillEntireDirectory(directory, cli_options) {
     const extension = cli_options.ext ? cli_options.ext : DEFAULT_EXTENSION;
@@ -38,14 +38,15 @@ export function backfillEntireDirectory(directory, cli_options) {
             }
         }
 
-        const throbber = ora('Translation is in progress...').start();
         setGlobalDispatcher(new Agent({ bodyTimeout: 3600000000, headersTimeout: 3600000000 }) )
+        const throbber = ora('Translation is in progress...').start();
         fetch(TRANSLATOR_ENDPOINT, {
-            mode: 'no-cors',
+            method: 'POST',
+            mode: 'cors',
             headers: {
                 "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*"
             },
-            method: 'POST',
             body: JSON.stringify(payload),
         }).then((response) => {
             throbber.stop();
@@ -63,7 +64,6 @@ export function backfillEntireDirectory(directory, cli_options) {
                                 console.log('Writing ' + directory + '/' + l + extension);
                                 if (l.toLowerCase() === defaultLocale.toLowerCase()) continue;
                                 const translationResult = JSON.stringify(resp.translations[l]);
-                                console.log(translationResult);
                                 fs.writeFile(directory + '/' + l + extension, translationResult, (err) => {
                                     // In case of a error throw err.
                                     if (err) throw err;
@@ -81,6 +81,10 @@ export function backfillEntireDirectory(directory, cli_options) {
                 console.log(response);
                 throw "error";
             }
+        }).catch((error) => {
+            throbber.stop();
+            console.log(error);
+            throw "error";
         });
     }
 };

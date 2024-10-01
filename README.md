@@ -147,7 +147,7 @@ Options:
 * Due to the nature of training data, choosing English as the originating language yields the highest quality of results.
 * Translation yields the highest quality of results when the translating texts are shorter and consist of phrases that are more commonplace. For longer sentences, consider breaking them down into smaller, more common phrases as separate translation texts.
 * Globetrotter caches translations for phrases it has previously encountered, so your translation requests become much faster in subsequent runs when Globetrotter sees less of new texts and phrases.
-* You can integrate your own custom translations with GlobeTrotter by adding the custom translations to each locale's JSON files and using the `--keep_existing_translations` option to instruct GlobeTrotter to use your custom translations instead. Globetrotter+ users have access to Globetrotter Dashboard where your team can add / edit translation overrides in a realtime without having to touch the actual JSON files.
+* You can integrate your own custom translations with Globetrotter by adding the custom translations to each locale's JSON files and using the `--keep_existing_translations` option to instruct Globetrotter to use your custom translations instead. Globetrotter+ users have access to Globetrotter Dashboard where your team can add / edit translation overrides in a realtime without having to touch the actual JSON files.
 * Additionally, please note that when using the `--keep_existing_translations` flag, Globetrotter will not attempt to update existing translations for translation texts in the target locales even if the text for the originating locale has changed. If you'd like to avoid this behavior, you can either remove existing translations from the destination locales or create a new translation ID and text from the originating locale whenever you are updating texts.
 * Please note that Globetrotter will remove any translations for translation IDs that do not exist in the originating locale from the destination locales. To preserve your existing translations in this scenario, add the corresponding translation ID in the originating locale and enable the `--keep_existing_translations flag` to your CLI arguments.
 
@@ -167,4 +167,4 @@ Globetrotter+ is currently in an invite-only closed beta. If you're interested i
 
 ## Support Globetrotter
 
-😃 If you like GlobeTrotter, you can help us out for a [couple of beers](https://donorbox.org/support-airjam) 🍺 or give it a star ⭐ 
+😃 If you like Globetrotter, you can help us out for a [couple of beers](https://donorbox.org/support-airjam) 🍺 or give it a star ⭐ 
