@@ -163,7 +163,7 @@ Features of Globetrotter don't just stop here! With Globetrotter+ account, you w
 * Language-specific components for frameworks such as React, Next.js, Swift, and Flutter, allowing you to simply drop in the components to your codebase and get Globetrotter up and running immediately. These components include built-in support for variables and pluralization within translation texts themselves.
 * Dedicated support channels for reporting and addressing issues and outages.
 
-Globetrotter+ is currently in an invite-only closed beta. If you're interested in joining the waitlist for access to the Globetrotter+ service, sign up by visiting [this link](https://www.globtrotter.dev/#signup).
+Globetrotter+ is currently in an invite-only closed beta. If you're interested in joining the waitlist for access to the Globetrotter+ service, sign up by visiting [this link](https://www.globetrotter.dev/#signup).
 
 ## Support Globetrotter
 
